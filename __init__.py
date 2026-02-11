@@ -4,3 +4,10 @@ gutenberg_authors = pd.read_csv('https://raw.githubusercontent.com/rfordatascien
 gutenberg_languages = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-06-03/gutenberg_languages.csv')
 gutenberg_metadata = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-06-03/gutenberg_metadata.csv')
 gutenberg_subjects = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-06-03/gutenberg_subjects.csv')
+
+df = pd.merge(gutenberg_languages, gutenberg_metadata, by='gutenberg_id')
+df = pd.merge(df, gutenberg_authors, by='gutenberg_author_id')
+
+print (df.head())
+
+
