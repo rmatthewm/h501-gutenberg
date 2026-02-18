@@ -26,10 +26,3 @@ if os.path.isfile(f'{METADATA_FILE}.csv'):
 else:
     gutenberg_metadata = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-06-03/gutenberg_metadata.csv')
     gutenberg_metadata.to_csv(f'{METADATA_FILE}.csv', index=False)
-
-if os.path.isfile(f'{SUBJECTS_FILE}.csv'):
-    gutenberg_subjects = pd.read_csv(f'{SUBJECTS_FILE}.csv')
-else:
-    gutenberg_subjects = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-06-03/gutenberg_subjects.csv')
-    gutenberg_subjects.to_csv(f'{SUBJECTS_FILE}.csv', index=False)
-

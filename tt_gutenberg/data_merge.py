@@ -1,7 +1,13 @@
 import pandas as pd 
-import __init__
+from tt_gutenberg.__init__ import *
 
 def get_merged_data():
+    """ Merges the databases loaded by __init__ into a single dataframe
+
+    Returns:
+        pandas.DataFrame: a pandas dataframe with the merged data 
+    """
+
     # Merge the databases using the indices they have in common
-    languages_metadata = pd.merge(__init__.gutenberg_languages, __init__.gutenberg_metadata, on='gutenberg_id')
-    return pd.merge(languages_metadata, __init__.gutenberg_authors, on='gutenberg_author_id')
+    languages_metadata = pd.merge(gutenberg_languages, gutenberg_metadata, on='gutenberg_id')
+    return pd.merge(languages_metadata, gutenberg_authors, on='gutenberg_author_id')
